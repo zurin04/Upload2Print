@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Print Without Limits</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('services') }}">Services</a></li>
+                <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('upload') }}">Upload</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>How It Works</h1>
+        <p>Our process is simple and straightforward. Follow these steps to get your documents printed:</p>
+        <ol>
+            <li>Upload your document using our secure form.</li>
+            <li>Provide your printing preferences and delivery details.</li>
+            <li>Make the payment using our secure e-wallet option.</li>
+            <li>Receive your printed documents at your doorstep.</li>
+        </ol>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 Print Without Limits. All rights reserved.</p>
+    </footer>
+</body>
+</html>

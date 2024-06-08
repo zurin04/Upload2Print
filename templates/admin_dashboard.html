@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Print Without Limits</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('services') }}">Services</a></li>
+                <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('upload') }}">Upload</a></li>
+                <li><a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Admin Dashboard</h1>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Size</th>
+                        <th>Pieces</th>
+                        <th>Address</th>
+                        <th>E-wallet</th>
+                        <th>Time</th>
+                        <th>File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for upload in client_uploads %}
+                    <tr>
+                        <td>{{ upload.name }}</td>
+                        <td>{{ upload.description }}</td>
+                        <td>{{ upload.size }}</td>
+                        <td>{{ upload.pieces }}</td>
+                        <td>{{ upload.address }}</td>
+                        <td>{{ upload.ewallet }}</td>
+                        <td>{{ upload.time }}</td>
+                        <td><a href="{{ url_for('download_file', filename=upload.file_path) }}" download>Download</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Print Without Limits. All rights reserved.</p>
+    </footer>
+</body>
+</html>

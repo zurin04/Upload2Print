@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Without Limits - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('services') }}">Services</a></li>
+                <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('upload') }}">Upload</a></li>
+                <!-- Add a link to the admin login page -->
+                <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Welcome to Print Without Limits</h1>
+            <p>Your one-stop solution for all your printing needs. Upload your documents, and we will handle the rest!</p>
+            <button onclick="window.location.href='{{ url_for('upload') }}'">Get Started</button>
+        </section>
+        <!-- Add other sections or content here -->
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 Print Without Limits. All rights reserved.</p>
+    </footer>
+</body>
+</html>
